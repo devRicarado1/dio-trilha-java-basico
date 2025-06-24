@@ -1,4 +1,7 @@
 package ModelagemIphone;
+import java.util.Scanner;
+import ModelagemIphone.ReprodutorMusical;
+
 
 // Modelagem e Diagramação de um Componente iPhone
 
@@ -18,7 +21,15 @@ public class Iphone {
 
     public static void main(String[] args) {
 
+        ReprodutorMusical reproduzir = new ReprodutorMusical();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite a opcao da musica que deseja tocar: ");
+        int opcaoUsuario = scanner.nextInt();
         
+        reproduzir.selecionaMusica(opcaoUsuario);
+        
+        reproduzir.pausar();
 
     }
     
