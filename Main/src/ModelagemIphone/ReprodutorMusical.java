@@ -28,7 +28,7 @@ public class ReprodutorMusical {
         }       
     }
 
-    public void selecionaMusica() {
+    public void selecionaMusica(String musica) {
         System.out.println("Escolha a musica que deseja tocar: ");
         System.out.print("1 Orochi - Antes do Sol Nascer, 2 Matue - Antes, 3 Timaia - Ela Partiu!");
 

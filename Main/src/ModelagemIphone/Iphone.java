@@ -1,6 +1,7 @@
 package ModelagemIphone;
 import java.util.Scanner;
 import ModelagemIphone.ReprodutorMusical;
+import ModelagemIphone.AparelhoTelefonico;
 
 
 // Modelagem e Diagramação de um Componente iPhone
@@ -21,15 +22,19 @@ public class Iphone {
 
     public static void main(String[] args) {
 
+        AparelhoTelefonico telefone = new AparelhoTelefonico();
         ReprodutorMusical reproduzir = new ReprodutorMusical();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Digite a opcao da musica que deseja tocar: ");
-        int opcaoUsuario = scanner.nextInt();
+        String opcaoUsuario = scanner.nextLine();
+        System.out.println("Digte a mensagem: ");
+        String mensagem = scanner.nextLine();
         
-        reproduzir.selecionaMusica(opcaoUsuario);
+        telefone.ligar(opcaoUsuario);
+        telefone.iniciarCorreioVoz(opcaoUsuario, mensagem);
         
-        reproduzir.pausar();
+        
 
     }
     
