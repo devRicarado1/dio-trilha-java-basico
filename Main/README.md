@@ -32,15 +32,6 @@ atualizarPagina(): Recarrega a página atualmente exibida, caso haja uma página
 Estrutura do Projeto
 O projeto segue uma estrutura de pacotes simples e organizada:
 
-.
-├── src/
-│   └── ModelagemIphone/
-│       ├── AparelhoTelefonico.java   # Lógica para chamadas e correio de voz
-│       ├── Iphone.java               # Classe principal com o menu interativo
-│       ├── NavegadorIntenet.java     # Lógica para navegação web
-│       └── ReprodutorMusical.java    # Lógica para reprodução de músicas
-└── README.md
-
 ### Autor
 
 * **Ricardo** - [GitHub](https://github.com/devRicarado1) | [Instagram](https://www.instagram.com/dev_ricardosilva1?igsh=d3J6aHQ1cDIxZWNm)
