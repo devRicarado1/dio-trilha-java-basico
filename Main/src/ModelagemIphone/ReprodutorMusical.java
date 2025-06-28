@@ -2,50 +2,44 @@ package ModelagemIphone;
 
 // Funcionalidades a Modelar Reprodutor Musical Métodos: tocar(), pausar(), selecionarMusica(String musica)
 public class ReprodutorMusical {
-    
-    String musica;
-    boolean tocando = false;
-    int opcaoMusica;
+
+    private String musicaAtual;
+    private Boolean musicaTocando = false;
 
     public void tocar() {
-        tocando = false;
-        
-        if (musica == null) {
-            System.out.println("Selecione uma musica Primeiro");
+
+        if (musicaAtual == null || musicaAtual.trim().isEmpty()) {
+            System.out.println("Nenhuma música sendo Reproduzida. Por favor, selecione uma música para tocar");
+            this.musicaTocando = false;
         } else {
-            tocando = true;
-            System.out.print("Tocando musica " + musica);
+            if (this.musicaTocando) {
+                System.out.println("A musica " + this.musicaAtual + "já está sendo Reproduzida");
+            } else {
+                this.musicaTocando = true;
+                System.out.println("Tocando música: " + this.musicaAtual);
+            }
         }
     }
 
     public void pausar() {
-        tocando = false;
-        
-        if(musica == null) {
-            System.out.println("Nenhuma Musica sendo Reproduzida");
+        if (this.musicaAtual == null || this.musicaAtual.trim().isEmpty()) {
+            System.out.println("Nenhuma musica para pausar");
+        }
+        else if (!this.musicaTocando) {
+            System.out.println("A musica " + this.musicaAtual + "já está pausada");
         } else {
-            System.out.print("Musica " + musica + " Pausada");
-        }       
+            this.musicaTocando = false;
+            System.out.print("Musica " + this.musicaAtual + " Pausada");
+        }
     }
 
     public void selecionaMusica(String musica) {
-        System.out.println("Escolha a musica que deseja tocar: ");
-        System.out.print("1 Orochi - Antes do Sol Nascer, 2 Matue - Antes, 3 Timaia - Ela Partiu!");
-
-        switch (opcaoMusica) {
-            case 1:
-                System.out.print("Tocando Musica de Orochi - Antes do Sol Nascer");
-                break;
-            case 2:
-                System.out.print("Tocando Musica de Matue - Antes");
-                break;
-            case 3:
-                System.out.print("Tocando Musica de Tim Maia - Ela Partiu!");
-                break;
-            default:
-                System.out.println("Opcao invalida. Nenhuma Musica Selecionada.");
-                break;
-        }
+        if(musica == null || musica.trim().isEmpty()) {
+            System.out.println("Nome de musica invalido. Nenhuma musica selecionada");
+        } else {
+            this.musicaAtual = musica;
+            System.out.println("Musica selecionada: " + this.musicaAtual);
+        }     
     }
 
 }
