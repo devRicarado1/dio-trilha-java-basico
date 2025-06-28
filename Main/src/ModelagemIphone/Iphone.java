@@ -2,6 +2,7 @@ package ModelagemIphone;
 import java.util.Scanner;
 import ModelagemIphone.ReprodutorMusical;
 import ModelagemIphone.AparelhoTelefonico;
+import ModelagemIphone.NavegadorIntenet;
 
 
 // Modelagem e Diagramação de um Componente iPhone
@@ -24,6 +25,7 @@ public class Iphone {
 
         AparelhoTelefonico telefone = new AparelhoTelefonico();
         ReprodutorMusical reproduzir = new ReprodutorMusical();
+        NavegadorIntenet intenet = new NavegadorIntenet();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Digite a opcao da musica que deseja tocar: ");
@@ -33,6 +35,11 @@ public class Iphone {
         
         telefone.ligar(opcaoUsuario);
         telefone.iniciarCorreioVoz(opcaoUsuario, mensagem);
+        
+        System.out.println("Digite URL da pagina ");
+        String url = scanner.nextLine();
+        intenet.exibirPagina(url);
+        
         
         
 
