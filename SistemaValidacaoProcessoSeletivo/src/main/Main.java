@@ -1,5 +1,11 @@
 package main;
 
+import java.util.Scanner;
+import java.util.Arrays;
+
+import main.Candidato;
+
+
 // Case 1: Vamos imaginar que em um processo seletivo existe o valor base salarial de R$ 2.000,00
 // e o salário pretentido pelo candidado. Vamos elaborar um controle de fluxo onde
 
@@ -8,7 +14,7 @@ package main;
 // Senão imprima: AGUARDANDO RESULTADO DEMAIS CANDIDATOS
 
 // Case 2: Foi solictado que nosso sistema garanta que diante das inumeras candidaturas sejam selecionados apenas no maximo 5
-// Candidados para entrevista onde o salário pretendido seja menor ou igualk ao salario base
+// Candidados para entrevista onde o salário pretendido seja menor ou igual ao salario base
 // Ultilizar Array de String
 
 // Case 3: Agora é hora imprimir a lista dos candidados selecionados para disponibilizar para o RH entrar em contato
@@ -21,9 +27,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-
-
+        Scanner scanner = new Scanner(System.in);
+        Candidato candidato = new Candidato();
+        String[] nomesCandidatos = new String[] {"Ricardo", "João", "Thayla", "Gelson", "Maria", "Renilda", "Priscila"};
+        double[] salarioPretendido = new double[] {1500.0, 7000.0 , 2000.0  , 1000.0 , 1500.0 , 2000.0 , 5000.0};
+                                
+        candidato.triagem(salarioPretendido);
+        candidato.selecionados(salarioPretendido, nomesCandidatos);      
+        candidato.realizarligacaoCandidato(salarioPretendido, nomesCandidatos);
     }
     
 }
