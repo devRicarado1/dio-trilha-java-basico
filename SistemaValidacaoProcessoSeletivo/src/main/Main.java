@@ -31,10 +31,23 @@ public class Main {
         Candidato candidato = new Candidato();
         String[] nomesCandidatos = new String[] {"Ricardo", "João", "Thayla", "Gelson", "Maria", "Renilda", "Priscila"};
         double[] salarioPretendido = new double[] {1500.0, 7000.0 , 2000.0  , 1000.0 , 1500.0 , 2000.0 , 5000.0};
-                                
-        candidato.triagem(salarioPretendido);
-        candidato.selecionados(salarioPretendido, nomesCandidatos);      
-        candidato.realizarligacaoCandidato(salarioPretendido, nomesCandidatos);
+        
+        // Triagem para cada Candidato
+        for(int i = 0; i < nomesCandidatos.length; i++) {          
+            System.out.println("Analisando: " + nomesCandidatos[i]);
+            candidato.triagem(salarioPretendido);
+            System.out.println();
+        }
+        
+        // Mostrar candidatos selecionados
+        candidato.selecionados(salarioPretendido, nomesCandidatos);     
+        
+        // Solicta ligação para um candidato
+        System.out.println("Digite o ID do candido que deseja Ligar: ");
+        int selecionaCandidato = scanner.nextInt();
+        
+        
+        candidato.realizarligacaoCandidato(nomesCandidatos, salarioPretendido, selecionaCandidato);
     }
     
 }
